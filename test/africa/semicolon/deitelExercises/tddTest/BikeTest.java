@@ -32,7 +32,7 @@ public class BikeTest {
     }
 
     @Test
-    public void testThatSpeedCanBeSet(){
+    public void testThatSpeedCanBeSetOnlyWhenBikeIsOn(){
         //given
         okada.setOn(true);
         assertTrue(okada.isOn());
@@ -45,6 +45,7 @@ public class BikeTest {
 
     @Test
     public void testThatBikeCanChangeStateFromOffToOn(){
+        assertFalse(okada.isOn());
         assertFalse(okada.isOn());
 
         okada.setOn(true);
@@ -102,12 +103,12 @@ public class BikeTest {
         okada.setOn(true);
         okada.setSpeedInKmPerHour(20);
         okada.speedUp();
-        okada.setSpeedInKmPerHour(40);
+        okada.setSpeedInKmPerHour(43);
         assertEquals(2, okada.getCurrentGearNumber());
 
         okada.speedUp();
         assertEquals(3, okada.getCurrentGearNumber());
-        assertEquals(43, okada.getSpeedInKmPerHour());
+        assertEquals(46, okada.getSpeedInKmPerHour());
     }
 
     @Test

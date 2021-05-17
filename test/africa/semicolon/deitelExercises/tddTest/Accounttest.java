@@ -54,6 +54,11 @@ public class Accounttest {
         Account jnetAccount = new Account();
         jnetAccount.setAccountPIN("2208");
         assertEquals("2208", jnetAccount.getAccountPIN());
+    }
+    @Test
+    public void programCanDisplayUserAccountInformation(){
+        Account jnetAccount = new Account("Jane DOe", 500.00);
+        Account.displayAccount(jnetAccount);
 
     }
 }

@@ -1,22 +1,13 @@
 package africa.semicolon.ridehailing.test;
 
 public class MapImplementation {
-    private String orderID;
-    private String carID;
-
-    public String getOrderID() {
-        return orderID;
+    private String location;
+    public String getLocation() {
+        return location;
     }
 
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getCarID() {
-        return carID;
-    }
-
-    public void setCarID(String carID) {
-        this.carID = carID;
-    }
 }

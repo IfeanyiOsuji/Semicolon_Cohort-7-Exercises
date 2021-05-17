@@ -37,6 +37,11 @@ public class Bike {
     }
 
     public void speedUp() {
+        accelerate();
+        speedInKmPerHour = speedInKmPerHour + currentGearNumber;
+    }
+
+    private void accelerate() {
         if (speedInKmPerHour >=20 && speedInKmPerHour < 40){
             currentGearNumber = 2;
         }
@@ -46,22 +51,25 @@ public class Bike {
         if(speedInKmPerHour >= 70){
             currentGearNumber = 4;
         }
-        speedInKmPerHour = speedInKmPerHour + currentGearNumber;
     }
 
     public void slowDown() {
-        if (speedInKmPerHour >= 1 && speedInKmPerHour <= 20){
-            currentGearNumber = 1;
-        }
-        if(speedInKmPerHour > 20 && speedInKmPerHour <= 40){
-            currentGearNumber = 2;
+        decelerate();
+        speedInKmPerHour = speedInKmPerHour - currentGearNumber;
+    }
+
+    public void decelerate(){
+        if(speedInKmPerHour > 70){
+            currentGearNumber = 4;
         }
         if(speedInKmPerHour > 40 && speedInKmPerHour <= 70){
             currentGearNumber = 3;
         }
-        if(speedInKmPerHour > 70){
-            currentGearNumber = 4;
+        if(speedInKmPerHour > 20 && speedInKmPerHour <= 40){
+            currentGearNumber = 2;
         }
-        speedInKmPerHour = speedInKmPerHour - currentGearNumber;
+        if (speedInKmPerHour >= 1 && speedInKmPerHour <= 20){
+            currentGearNumber = 1;
+        }
     }
 }

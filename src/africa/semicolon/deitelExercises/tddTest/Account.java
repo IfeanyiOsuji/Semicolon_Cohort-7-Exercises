@@ -2,9 +2,17 @@ package africa.semicolon.deitelExercises.tddTest;
 
 public class Account {
     public static final int MINIMUM_BALANCE = 0;
+    private  String name;
     private double myAccountBallance;
     private String accountPIN = "1907";
 
+    public Account(String name, double amountToDeposit) {
+        this.name = name;
+        myAccountBallance = amountToDeposit;
+    }
+    public Account(){
+
+    }
     public double getMyAccountBallance(){
         return myAccountBallance;
     }
@@ -44,5 +52,15 @@ public class Account {
     public void setAccountPIN(String accountPIN) {
         this.accountPIN = accountPIN;
     }
+    public static void displayAccount(Account accountToDisplay){
+        System.out.println(accountToDisplay.getName() +" : "+accountToDisplay.getMyAccountBallance());
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -1,2 +1,34 @@
-package africa.semicolon.ridehailing.test;public class User {
+package africa.semicolon.ridehailing.test;
+
+public class User {
+    private String name;
+    private String phone;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void requestRide() {
+    }
+
+    public void makePayment() {
+    }
+
+    public void requestPayment() {
+    }
+
+    public void confirmPayment() {
+    }
 }
