@@ -73,6 +73,7 @@ public class HeartRates {
     public String getTargetHeartRate() {
         double fiftyPercentHeartRate = (50.0/100) * getMaximumheartRate();
         double eightyFivePercentHeartRate = (85.0/100) * getMaximumheartRate();
-        return fiftyPercentHeartRate +" - "+ eightyFivePercentHeartRate;
+        //return fiftyPercentHeartRate +" - "+ eightyFivePercentHeartRate;
+        return String.format("%.2f - %.2f",fiftyPercentHeartRate, eightyFivePercentHeartRate);
     }
 }

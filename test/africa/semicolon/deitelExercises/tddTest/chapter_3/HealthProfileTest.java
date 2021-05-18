@@ -31,7 +31,48 @@ public class HealthProfileTest {
         healthProfile.setLastName("Mark");
         assertEquals("Mark", healthProfile.getLastName());
     }
-
-
-
+    @Test
+    public void testThatUserHasGender(){
+        healthProfile.setGender('M');
+        assertEquals('M', healthProfile.getGender());
+    }
+    @Test
+    public void testThatUserHasDateOfBirth(){
+        assertEquals("5/17/1999", healthProfile.getDateOfBirth());
+    }
+    @Test
+    public void testThatUserCanUpdateDateOfBirth(){
+        healthProfile.setDateOfBirth(new Date(5, 10, 1996));
+        assertEquals("5/10/1996", healthProfile.getDateOfBirth());
+    }
+    @Test
+    public void testThatUserHasHeight(){
+        assertEquals(1.5, healthProfile.getHeight());
+    }
+    @Test
+    public void testThatUserCanUpdateheight(){
+        healthProfile.setHeight(2.8);
+        assertEquals(2.8, healthProfile.getHeight());
+    }
+    @Test
+    public void testThatUserHasWeight(){
+        assertEquals(67.9, healthProfile.getWeight());
+    }
+    @Test
+    public void testThatUserCanUpdateWeight(){
+        healthProfile.setWeight(75.7);
+        assertEquals(75.7, healthProfile.getWeight());
+    }
+    @Test
+    public void testToDetermineUsersAgeInYearsCanBeDetermined(){
+        assertEquals(22, healthProfile.getAgeInYears());
+    }
+    @Test
+    public void testThatUsersMaximumHeartRateCanBeDetermined(){
+        assertEquals(198, healthProfile.getMaximumHeartRate());
+    }
+    @Test
+    public void displayUsersTargetHeartRate(){
+        assertEquals("99.00 - 168.30", healthProfile.getTargetHeartRate());
+    }
 }

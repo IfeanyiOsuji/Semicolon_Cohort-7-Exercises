@@ -10,6 +10,7 @@ public class AirConditioner {
     }
 
     public String getName() {
+
         return productName;
     }
     public void decreaseTemperature() {

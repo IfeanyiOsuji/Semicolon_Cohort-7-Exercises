@@ -45,6 +45,6 @@ public class HeartRatesTest {
     @Test
     void testForTargetHeartRate(){
         heartRates = new HeartRates("", "Doe", new Date(5, 12, 1987));
-        assertEquals("93.0 - 158.1", heartRates.getTargetHeartRate());
+        assertEquals("93.00 - 158.10", heartRates.getTargetHeartRate());
     }
 }
