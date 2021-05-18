@@ -32,54 +32,24 @@ public class HeartRates {
     public HeartRates(String firstName, String lastName, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
-        if(!(dateOfBirth == null)) {
-            if (dateOfBirth.getMonth() > 0 && dateOfBirth.getMonth() < 13) {
-                if (validateDaysOfMonth(dateOfBirth))
-                    this.dateOfBirth = dateOfBirth;
-            } else
-                System.out.println("Invalid Month");
-
-        }
+        this.dateOfBirth = dateOfBirth;
     }
-    private boolean validateDaysOfMonth(Date dateOfBirth) {
-        if(((dateOfBirth.getDay() >0 && dateOfBirth.getDay() <32)
-                &&((dateOfBirth.getMonth()==1||dateOfBirth.getMonth()==3||dateOfBirth.getMonth()==5||dateOfBirth.getMonth()==7||dateOfBirth.getMonth()==8||dateOfBirth.getMonth()==10||dateOfBirth.getMonth()==12)))
-                ||((dateOfBirth.getDay() >0 && dateOfBirth.getDay() <31)&&((dateOfBirth.getMonth()==4||dateOfBirth.getMonth()==6||dateOfBirth.getMonth()==9||dateOfBirth.getMonth()==11)))
-                ||((dateOfBirth.getDay() >0 && dateOfBirth.getDay() <29) && (dateOfBirth.getMonth()==2)))
-            return true;
-        else
-            System.out.println("Invalid day of Month");
-            return false;
-    }
-
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         if(this.firstName == null || this.firstName == "")
         this.firstName = firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         if(this.lastName == null || this.lastName == "")
         this.lastName = lastName;
     }
-
     public void setDateOfBirth(Date dateOfBirth) {
-        if(this.dateOfBirth == null){
-            if(dateOfBirth.getMonth()>0 && dateOfBirth.getMonth()<13){
-            if(validateDaysOfMonth(dateOfBirth))
-                this.dateOfBirth = dateOfBirth;
-            }
-            else
-                System.out.println("Invalid Month");
-        }
-
+        this.dateOfBirth = dateOfBirth;
     }
     public String getDateOfBirth() {
         return dateOfBirth.getMonth()+"/"+dateOfBirth.getDay()+"/"+dateOfBirth.getYear();
@@ -94,23 +64,15 @@ public class HeartRates {
         else
             return currentYear - dateOfBirth.getYear();
     }
-
-    public static void main(String[] args) {
-      //  getAgeInYears(new Date(7, 12, 2012));
-        HeartRates h = new HeartRates("Jane", "Doe", new Date(6,31, 1878 ));
-    }
-
     public int getMaximumheartRate() {
         if(220 >= getAgeInYears())
         return 220 - getAgeInYears();
         else
             return getAgeInYears() - 220;
     }
-
     public String getTargetHeartRate() {
         double fiftyPercentHeartRate = (50.0/100) * getMaximumheartRate();
         double eightyFivePercentHeartRate = (85.0/100) * getMaximumheartRate();
-
         return fiftyPercentHeartRate +" - "+ eightyFivePercentHeartRate;
     }
 }

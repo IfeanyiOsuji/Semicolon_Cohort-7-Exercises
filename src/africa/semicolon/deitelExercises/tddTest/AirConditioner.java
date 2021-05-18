@@ -14,7 +14,7 @@ public class AirConditioner {
     }
     public void decreaseTemperature() {
         if(isOn) {
-            if (temperature > 16)
+            if (temperature >= 16)
                 temperature = temperature - 1;
         }
     }

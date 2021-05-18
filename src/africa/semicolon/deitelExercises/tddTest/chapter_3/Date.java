@@ -46,26 +46,21 @@ public class Date {
         }
         else
             System.out.println("Invalid Day");
-
     }
 
     public int getDay() {
         return day;
     }
-
     public void setYear(int year) {
         String validYear = Integer.toString(year);
         if(validYear.length() ==4)
             this.year = Integer.parseInt(validYear);
         else
             System.out.println("Invalid Year");
-
     }
-
     public int getYear() {
         return year;
     }
-
     public String displayDate() {
         if(month ==0 || day==0||year==0){
             return "";

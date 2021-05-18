@@ -10,8 +10,8 @@ public class DateTest {
     @Test
     public void testInstanceVaribles(){
         Date date = new Date(11, 23, 2021);
-        date.setMonth(13);
-        assertEquals(13, date.getMonth());
+        date.setMonth(12);
+        assertEquals(12, date.getMonth());
         date.setDay(31);
         assertEquals(31, date.getDay());
         date.setYear(2017);
