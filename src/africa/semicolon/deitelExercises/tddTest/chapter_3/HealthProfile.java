@@ -5,20 +5,22 @@ public class HealthProfile {
     private String lastName;
     private char gender;
     private Date dateOfBirth;
-    private double height;
-    private double  weight;
+    private double heightInInches;
+    private double weightInPounds;
     private HeartRates heartRates;
-    public HealthProfile(String firstName, String lastName, char gender, Date dateOfBirth, double height, double weight) {
+    private BMICalculator bmiCalculator = new BMICalculator();
+    public HealthProfile(String firstName, String lastName, char gender, Date dateOfBirth, double heightInInches, double weightInPounds) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
-        this.height = height;
-        this.weight = weight;
+        this.heightInInches = heightInInches;
+        this.weightInPounds = weightInPounds;
     }
-    public HealthProfile(HeartRates heartRates){
-        this.heartRates = heartRates;
-    }
+    //private HealthProfile(HeartRates heartRates, BMICalculator bmiCalculator){
+     //   this.heartRates = heartRates;
+      //  this.bmiCalcula
+  //  }
     public String getFirstName() {
         return firstName;
     }
@@ -46,17 +48,17 @@ public class HealthProfile {
         int year = dateOfBirth.getYear();
         return month+"/"+day+"/"+year;
     }
-    public double getHeight() {
-        return height;
+    public double getHeightInInches() {
+        return heightInInches;
     }
-    public void setHeight(double height) {
-        this.height = height;
+    public void setHeightInInches(double heightInInches) {
+        this.heightInInches = heightInInches;
     }
-    public double getWeight() {
-        return weight;
+    public double getWeightInPounds() {
+        return weightInPounds;
     }
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setWeightInPounds(double weightInPounds) {
+        this.weightInPounds = weightInPounds;
     }
     public int getAgeInYears() {
         return new HeartRates(firstName, lastName, dateOfBirth ).getAgeInYears();
@@ -66,5 +68,15 @@ public class HealthProfile {
     }
     public String getTargetHeartRate() {
         return new HeartRates(firstName, lastName, dateOfBirth ).getTargetHeartRate();
+    }
+
+    public double calculateBMI() {
+        bmiCalculator.setWeightInPounds(weightInPounds);
+        bmiCalculator.setHeightInInches(heightInInches);
+        return bmiCalculator.calculateBMI(bmiCalculator.getWeightInPounds(), bmiCalculator.getHeightInInches());
+    }
+
+    public String getBMIValues() {
+        return bmiCalculator.getValues();
     }
 }

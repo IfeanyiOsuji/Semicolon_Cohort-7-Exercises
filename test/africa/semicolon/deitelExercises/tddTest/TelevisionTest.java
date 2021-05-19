@@ -138,4 +138,21 @@ public class TelevisionTest {
         television.increaseVolume();//50
         assertEquals(50, television.getVolume());
     }
+    @Test
+    public void testThatPreviousChannelCanBeMaintainedWhenTVisOffThenOn(){
+        television.power(true);
+        television.setChannel(43);
+        television.power(false);
+        assertFalse(television.powerOn());
+        assertEquals(43, television.getChannel());
+    }
+
+
+
+
+
+
+
+
+
 }
