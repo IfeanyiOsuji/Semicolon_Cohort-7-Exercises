@@ -53,13 +53,13 @@ public class BMICalculatorTest {
     public void testThatBMICanBeCalculatedUsingWeightInPoundsAndHeightInInches(){
         bmiCalculator.setWeightInPounds(20.0);
         bmiCalculator.setHeightInInches(2.5);
-        assertEquals(2249.6, bmiCalculator.calculateBMI(bmiCalculator.getWeightInPounds(), bmiCalculator.getHeightInInches()));
+        assertEquals(2249.6, bmiCalculator.calculateBMIUsingWeightInPoundsAndHeightInInches());
     }
     @Test
     public void testThatBMICanBeCalculatedUsingWeightInKilogramsAndHeightInMeters(){
         bmiCalculator.setWeightInKilograms(20.0);
         bmiCalculator.setHeightInMeters(1.5);
-        assertEquals(8.88888888888889, bmiCalculator.calculateBMI(bmiCalculator.getWeightInKilograms(), bmiCalculator.getHeightInMeters()));
+        assertEquals(8.88888888888889, bmiCalculator.calculateWeightInKilogramsAndHeightInMeters());
     }
     @Test
     public void testThatBMIInfoCanBeDisplayed(){

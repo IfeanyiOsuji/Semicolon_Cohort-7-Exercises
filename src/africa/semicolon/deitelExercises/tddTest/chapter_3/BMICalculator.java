@@ -42,12 +42,22 @@ public class BMICalculator {
     public double calculateBMI(double weight, double height) {
         double BMI = 0;
         if(weight == weightInPounds && height == heightInInches){
-            BMI = (weight * 703) / (height *height);
+            calculateBMIUsingWeightInPoundsAndHeightInInches();
         }
         if(weight == weightInKilograms && height == heightInMeters){
-            BMI = (weight) / (height *height);
+            calculateWeightInKilogramsAndHeightInMeters();
         }
 
+        return BMI;
+    }
+    public double calculateBMIUsingWeightInPoundsAndHeightInInches(){
+        double BMI;
+        BMI = (weightInPounds * 703) / (heightInInches *heightInInches);
+        return BMI;
+    }
+    public double calculateWeightInKilogramsAndHeightInMeters(){
+        double BMI;
+        BMI = (weightInKilograms) / (heightInMeters *heightInMeters);
         return BMI;
     }
 

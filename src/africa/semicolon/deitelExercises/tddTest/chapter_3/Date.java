@@ -13,14 +13,13 @@ public class Date {
         if(((day >0 && day <32)
                 &&((month==1||month==3||month==5||month==7||month==8||month==10||month==12)))
                 ||((day >0 && day <31)&&((month==4||month==6||month==9||month==11)))
-                ||((day >0 && day<29) && (month==2))) {
+                ||((day >0 && day<29) && (month==2)) || (day>0 && day<30) && isLeapYear()) {
             this.day = day;
         }
         else
             System.out.println("Invalid Day");
-       String validYear = Integer.toString(year);
-        if(validYear.length() ==4)
-        this.year = Integer.parseInt(validYear);
+        if(year > 1950 && year <=2021)
+            this.year = year;
         else
             System.out.println("Invalid Year");
     }
@@ -30,7 +29,6 @@ public class Date {
             this.month = month;
         else
             System.out.println("Invalid Month");
-
     }
 
     public int getMonth() {
@@ -41,7 +39,7 @@ public class Date {
         if(((day >0 && day <32)
                 &&((month==1||month==3||month==5||month==7||month==8||month==10||month==12)))
                 ||((day >0 && day <31)&&((month==4||month==6||month==9||month==11)))
-                ||((day >0 && day<29) && (month==2))) {
+                ||((day >0 && day<29) && (month==2)) || (day>0 && day>30) && isLeapYear()) {
             this.day = day;
         }
         else
@@ -52,9 +50,8 @@ public class Date {
         return day;
     }
     public void setYear(int year) {
-        String validYear = Integer.toString(year);
-        if(validYear.length() ==4)
-            this.year = Integer.parseInt(validYear);
+        if(year > 1950 && year <=2021)
+            this.year = year;
         else
             System.out.println("Invalid Year");
     }
@@ -68,5 +65,21 @@ public class Date {
         else
             System.out.println(month +"/"+day+"/"+year);
             return month +"/"+day+"/"+year;
+    }
+
+    public boolean isLeapYear() {
+        if(year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return true;
+        }
+        else
+            return false;
+
     }
 }

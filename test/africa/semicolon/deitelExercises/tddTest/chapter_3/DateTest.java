@@ -3,13 +3,14 @@ package africa.semicolon.deitelExercises.tddTest.chapter_3;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DateTest {
 
    // Date date = new Date(11, 23, 2021);
     @Test
     public void testInstanceVaribles(){
-        Date date = new Date(11, 23, 2021);
+        Date date = new Date(11, 23, 1949);
         date.setMonth(12);
         assertEquals(12, date.getMonth());
         date.setDay(31);
@@ -34,5 +35,11 @@ public class DateTest {
         Date date = new Date(1, 31, 2021);
         date.displayDate();
     }
+    @Test
+    public void testThatTheYearIsALeapYear(){
+        Date date = new Date(2, 29, 2012);
+        assertTrue(date.isLeapYear());
+    }
+
 
 }

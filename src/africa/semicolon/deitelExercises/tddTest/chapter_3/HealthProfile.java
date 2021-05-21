@@ -1,6 +1,7 @@
 package africa.semicolon.deitelExercises.tddTest.chapter_3;
 
 public class HealthProfile {
+
     private String firstName;
     private String lastName;
     private char gender;
@@ -17,10 +18,7 @@ public class HealthProfile {
         this.heightInInches = heightInInches;
         this.weightInPounds = weightInPounds;
     }
-    //private HealthProfile(HeartRates heartRates, BMICalculator bmiCalculator){
-     //   this.heartRates = heartRates;
-      //  this.bmiCalcula
-  //  }
+
     public String getFirstName() {
         return firstName;
     }
@@ -73,9 +71,8 @@ public class HealthProfile {
     public double calculateBMI() {
         bmiCalculator.setWeightInPounds(weightInPounds);
         bmiCalculator.setHeightInInches(heightInInches);
-        return bmiCalculator.calculateBMI(bmiCalculator.getWeightInPounds(), bmiCalculator.getHeightInInches());
+        return bmiCalculator.calculateBMIUsingWeightInPoundsAndHeightInInches();
     }
-
     public String getBMIValues() {
         return bmiCalculator.getValues();
     }

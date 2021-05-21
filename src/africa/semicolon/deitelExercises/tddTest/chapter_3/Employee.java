@@ -22,7 +22,8 @@ public class Employee {
     }
 
     public double getMonthlySalary() {
-        return monthlySalary;
+        return
+                monthlySalary;
     }
 
     public double yearlySalary() {
