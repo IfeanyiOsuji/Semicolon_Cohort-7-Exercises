@@ -9,12 +9,9 @@ public class Grade {
     // 60 - 69 = D
    // < 60 = F
    /*
-
-
-
     */
     Scanner scanner = new Scanner(System.in);
-    public void printGrade(){
+    public char printGrade(short input){
         /*
         Pseudocode
         1. Ask the user to enter a score which must not be negative
@@ -31,26 +28,32 @@ public class Grade {
         3. If the user enters a negative score
 
          */
-        System.out.println("Enter an score");
-        int input = scanner.nextInt();
+        //System.out.println("Enter an score");
+        //int input = scanner.nextInt();
         if(input >= 90)
-            System.out.println("A");
+            //System.out.println("A");
+            return 'A';
         else
         if(input >= 80)
-            System.out.println("B");
+            //System.out.println("B");
+            return 'B';
         else
         if(input >= 70)
-            System.out.println("C");
+            //System.out.println("C");
+            return 'C';
         else
         if(input >= 60)
-            System.out.println("D");
+           // System.out.println("D");
+            return 'D';
         else
         if(input >= 0)
-            System.out.println("F");
+            //System.out.println("F");
+            return 'F';
         else
-            System.out.println("Score must not be negative");
+            //System.out.println("Score must not be negative");
+            return ' ';
     }
-    public void printAnotherGrade(){
+    public char printAnotherGrade(short input){
 //        System.out.println("Enter an Integer");
 //
 //        int input = scanner.nextInt();
@@ -74,25 +77,31 @@ public class Grade {
         3. If the user enters a negative score
 
          */
-        System.out.println("Enter an score");
-        int input = scanner.nextInt();
+        //System.out.println("Enter an score");
+       // int input = scanner.nextInt();
         if(input >= 90)
-            System.out.println("A");
+            //System.out.println("A");
+            return 'A';
         if(input >= 80 && input <90)
-            System.out.println("B");
+            //System.out.println("B");
+            return 'B';
         if(input >= 70 && input <80)
-            System.out.println("C");
+           // System.out.println("C");
+            return 'C';
         if(input >= 60 && input < 70)
-            System.out.println("D");
+            //System.out.println("D");
+            return 'D';
         if(input >= 0 && input < 60)
-            System.out.println("F");
-        if(input < 0)
-            System.out.println("Score must not be negative");
+            //System.out.println("F");
+            return 'F';
+        else
+            //System.out.println("Score must not be negative");
+            return ' ';
 
    }
     public static void main(String[] args) {
        Grade grade = new Grade();
        //grade.printGrade();
-        grade.printAnotherGrade();
+        grade.printAnotherGrade((short)70);
     }
 }
