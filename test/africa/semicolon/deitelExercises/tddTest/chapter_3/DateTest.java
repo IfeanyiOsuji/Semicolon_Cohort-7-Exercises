@@ -33,7 +33,8 @@ public class DateTest {
     @Test
     public void testDisplayDate(){
         Date date = new Date(1, 31, 2021);
-        date.displayDate();
+       // date.displayDate();
+        assertEquals("1/31/2021", date.displayDate());
     }
     @Test
     public void testThatTheYearIsALeapYear(){
