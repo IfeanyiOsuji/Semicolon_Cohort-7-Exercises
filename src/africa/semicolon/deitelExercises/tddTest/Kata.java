@@ -3,19 +3,19 @@ package africa.semicolon.deitelExercises.tddTest;
 import java.util.Scanner;
 
 public class Kata {
-    public static void pallindrum(){
+    public static void pallindrum() {
         System.out.println("Enter a number ");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         int pal = number + 0;
         int reverse = 0;
-        while(number !=0){
+        while (number != 0) {
             int digit = number % 10;
             reverse = reverse * 10 + digit;
             number /= 10;
         }
         System.out.println(pal);
-        if(reverse == pal)
+        if (reverse == pal)
             System.out.println("Number is Pallindrum");
     }
 
@@ -51,5 +51,23 @@ public class Kata {
                 return 0;
 
           // return 0;
+    }
+
+    public int getNumberOfFactorsOfNumber(int number) {
+        int factor = 2;
+        int count = 0;
+      //  boolean isfactorAtLeastHalfOfNumber = factor <= number/2;
+        while(factor <= number/2){
+            if((number % factor) == 0)
+                count++;
+                factor++;
+        }
+        System.out.println(count +2);
+        return count + 2;
+    }
+
+    public int getSellersProfit(int numberOfCopies) {
+        int sellersPrice = numberOfCopies * 2000;
+        return sellersPrice - determinePriceByQuantity(numberOfCopies);
     }
 }

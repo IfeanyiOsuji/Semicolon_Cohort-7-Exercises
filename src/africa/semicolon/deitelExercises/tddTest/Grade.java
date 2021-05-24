@@ -100,8 +100,19 @@ public class Grade {
 
    }
     public static void main(String[] args) {
-       Grade grade = new Grade();
+       //Grade grade = new Grade();
        //grade.printGrade();
-        grade.printAnotherGrade((short)70);
+        //grade.printAnotherGrade((short)70);
+       // int i=0;
+        //while(i < 5){
+           // System.out.println("Hello World");
+        //i++;}
+
+        int number = 0;
+        while(number <=20){
+                System.out.println(number);
+            number+=2;
+        }
     }
+
 }

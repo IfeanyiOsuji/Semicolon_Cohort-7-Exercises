@@ -44,6 +44,27 @@ public class KataTest {
         assertEquals(8000000, kata.determinePriceByQuantity(10000));
 
     }
+    @Test
+    public void testToDetermineSellersProfit(){
+        // 1 - 4 copies
+        assertEquals(500, kata.getSellersProfit(1));
+        assertEquals(1000, kata.getSellersProfit(2));
+        assertEquals(2000, kata.getSellersProfit(4));
+        // 5 - 9 copies
+        assertEquals(3000, kata.getSellersProfit(5));
+        assertEquals(4200, kata.getSellersProfit(7));
+        assertEquals(5400, kata.getSellersProfit(9));
+        assertEquals(240000, kata.getSellersProfit(200));
+
+    }
+    @Test
+    public void  testThatNumberReturnsItsNumberOfFactors(){
+        assertEquals(4, kata.getNumberOfFactorsOfNumber(10));
+        assertEquals(6, kata.getNumberOfFactorsOfNumber(20));
+        assertEquals(9, kata.getNumberOfFactorsOfNumber(100));
+        assertEquals(16, kata.getNumberOfFactorsOfNumber(1000));
+        assertEquals(8, kata.getNumberOfFactorsOfNumber(56));
+    }
 
 
 }
