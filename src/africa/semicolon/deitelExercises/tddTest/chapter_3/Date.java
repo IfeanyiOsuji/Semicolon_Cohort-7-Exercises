@@ -1,5 +1,7 @@
 package africa.semicolon.deitelExercises.tddTest.chapter_3;
 
+import java.time.LocalDate;
+
 public class Date {
     private  int day;
     private  int year;
@@ -18,7 +20,7 @@ public class Date {
         }
         else
             System.out.println("Invalid Day");
-        if(year > 1950 && year <=2021)
+        if(year > 1950 && year < LocalDate.now().getYear())
             this.year = year;
         else
             System.out.println("Invalid Year");

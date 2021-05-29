@@ -49,20 +49,70 @@ public class Kata {
         System.out.println("Average of the scores = "+ (sum * 1.0)/numberOfScores);
     }
     public static void calculateAnotherSumAndAverageScores(){
-        int sum = 0;
-        int numberOfScores = 0;
+//        int sum = 0;
+//        int numberOfScores = 0;
         Scanner input = new Scanner(System.in);
-        while(true){
-            System.out.println("Enter a score or enter -1 to exit");
-            int score = input.nextInt();
-            if(score == -1)
-                break;
-            sum += score;
-            numberOfScores++;
-        }
-        System.out.println("Sum of the scores = "+sum);
-        System.out.println("Average of the scores = "+sum * 1.0/numberOfScores);
+//        while(true){
+//            System.out.println("Enter a score or enter -1 to exit");
+//            int score = input.nextInt();
+//            if(score == -1)
+//                break;
+//            sum += score;
+//            numberOfScores++;
+//        }
+//        System.out.println("Sum of the scores = "+sum);
+//        System.out.println("Average of the scores = "+sum * 1.0/numberOfScores);
 
+        // Another Perspective
+        int sum =0;
+        System.out.println("Enter a score and enter -1 to quit");
+        int numberOfInputs = 0;
+        int score = input.nextInt();
+        StringBuilder sumOfScores = new StringBuilder();
+        while (score != -1){
+            sum += score;
+            numberOfInputs++;
+            sumOfScores.append(" + ").append(score);
+            System.out.println("Enter a score and enter -1 to quit");
+            score = input.nextInt();
+        }
+        sumOfScores = new StringBuilder(sumOfScores.substring(2));
+        System.out.println("Sum of the scores = "+sumOfScores + " = "+sum);
+        System.out.println("Average of the sxores = "+sum * 1.0 / numberOfInputs);
+
+
+    }
+    public static void collectUserInput(){
+        Scanner input = new Scanner(System.in);
+        int userInput;
+        do{
+            String transactionPrompt = """
+                    -> Enter 1 for  deposit;
+                    -> Enter 2 for withdraw;
+                    -> Enter 3 to view all Accounts;
+                    -> Enter 4 to trasfer;
+                    -> Enter 5 to view your details;
+                    -> Enter 6 to exit;
+                    -> Enter 7 to Logout;
+                    """;
+            System.out.println(transactionPrompt);
+           userInput = input.nextInt();
+           if(userInput == 1)
+               System.out.println("deposit");
+           if(userInput == 2)
+               System.out.println("withdraw");
+           if(userInput == 3)
+               System.out.println("View All Account");
+           if(userInput == 4)
+               System.out.println("Transfer");
+           if(userInput == 5)
+               System.out.println("View Details");
+           if (userInput == 7)
+               System.out.println("LogOut");
+           if(userInput > 7)
+               System.out.println("Invalid input");
+        }
+        while(userInput != 6);
     }
 
 
@@ -71,7 +121,9 @@ public class Kata {
         //pallindrum();
         //System.out.println(isPrime(4));
         //calculateSumAndAverageOfStudentScores();
-        calculateAnotherSumAndAverageScores();
+       // calculateAnotherSumAndAverageScores();
+      collectUserInput();
+
     }
 
     public int determinePriceByQuantity(int quantity) {
@@ -111,9 +163,11 @@ public class Kata {
                 count++;
                 factor++;
         }
+
         System.out.println(count +2);
         return count + 2;
     }
+
 
     public  int getSellersProfit(int numberOfCopies) {
         int sellersPrice = numberOfCopies * 2000;
