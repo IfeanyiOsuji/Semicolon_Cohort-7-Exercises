@@ -65,6 +65,11 @@ public class KataTest {
         assertEquals(16, kata.getNumberOfFactorsOfNumber(1000));
         assertEquals(8, kata.getNumberOfFactorsOfNumber(56));
     }
+    @Test
+    public void testThatNumberCanBeReveresd(){
+        Kata kata = new Kata();
+        assertEquals("54321", kata.reverseOrder(12345));
+    }
 
 
 }

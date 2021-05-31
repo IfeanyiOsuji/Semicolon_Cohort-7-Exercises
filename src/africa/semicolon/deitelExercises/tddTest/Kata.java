@@ -19,7 +19,7 @@ public class Kata {
             System.out.println("Number is Pallindrum");
     }
     public static void calculateSumAndAverageOfStudentScores(){
-        //Pseudocode
+        /*Pseudocode
         //1.Ask the user to enter the number of Students in the class
         //2. You will need to add the scores of th students, since we dont have the scores yet, the sum is zero
         //3. Input the first student score
@@ -28,10 +28,10 @@ public class Kata {
         //6. while the number of scores is less than number of students
                 // repeat repeat 3, 4, 5
         //7. Since we now have the sum of the score as the final value of sum,
-            // calculate the average by dividing sum of the scores by the number of scores.
+            // calculate the average by dividing sum of the scores by the number of scores.*/
 
                 // Solution
-        int sum = 0;
+        /*int sum = 0;
         System.out.println("How many Students are in your class? ");
         Scanner input = new Scanner(System.in);
         int numberOfStudents = input.nextInt();
@@ -46,22 +46,22 @@ public class Kata {
             numberOfScores++;
         }
         System.out.println("Sum of the scores = "+sum);
-        System.out.println("Average of the scores = "+ (sum * 1.0)/numberOfScores);
+        System.out.println("Average of the scores = "+ (sum * 1.0)/numberOfScores);*/
     }
     public static void calculateAnotherSumAndAverageScores(){
-//        int sum = 0;
-//        int numberOfScores = 0;
+      //int sum = 0;
+        //int numberOfScores = 0;
         Scanner input = new Scanner(System.in);
-//        while(true){
-//            System.out.println("Enter a score or enter -1 to exit");
-//            int score = input.nextInt();
-//            if(score == -1)
-//                break;
-//            sum += score;
-//            numberOfScores++;
-//        }
-//        System.out.println("Sum of the scores = "+sum);
-//        System.out.println("Average of the scores = "+sum * 1.0/numberOfScores);
+    /*    while(true){
+            System.out.println("Enter a score or enter -1 to exit");
+            int score = input.nextInt();
+            if(score == -1)
+                break;
+            sum += score;
+            numberOfScores++;
+        }
+        System.out.println("Sum of the scores = "+sum);
+        System.out.println("Average of the scores = "+sum * 1.0/numberOfScores);*/
 
         // Another Perspective
         int sum =0;
@@ -114,15 +114,32 @@ public class Kata {
         }
         while(userInput != 6);
     }
+    public String reverseNumber(int digits){
+        String getString = Integer.toString(digits);
+        String reversed ="";
+        for(int i=getString.length()-1; i>=0; i--){
+            reversed+=getString.charAt(i);
+        }
+        System.out.println(reversed);
+        return reversed;
+
+    }
+    public String reverseOrder(int fiveDigits){
+        String reversed = "";
+        for (int i=10000; i>0;){
+            int getFirstDigit = fiveDigits/i;
+            reversed = getFirstDigit+reversed;
+            fiveDigits =fiveDigits % i;
+            i = i/10;
+        }
+        System.out.println(reversed);
+      return reversed;
+    }
 
 
     public static void main(String[] args) {
-//        System.out.println(checkIfANumberIsPrime(3));
-        //pallindrum();
-        //System.out.println(isPrime(4));
-        //calculateSumAndAverageOfStudentScores();
-       // calculateAnotherSumAndAverageScores();
-      collectUserInput();
+        Kata kata = new Kata();
+        kata.reverseOrder(23451);
 
     }
 
@@ -150,14 +167,11 @@ public class Kata {
                   return 1500 * quantity;
             else
                 return 0;
-
-          // return 0;
     }
 
     public int getNumberOfFactorsOfNumber(int number) {
         int factor = 2;
         int count = 0;
-      //  boolean isfactorAtLeastHalfOfNumber = factor <= number/2;
         while(factor <= number/2){
             if((number % factor) == 0)
                 count++;
