@@ -70,6 +70,11 @@ public class KataTest {
         Kata kata = new Kata();
         assertEquals("54321", kata.reverseOrder(12345));
     }
+    @Test
+    public void testTheFactorialOfANumber(){
+        Kata kata = new Kata();
+        assertEquals(720,kata.findFactorialOf(6) );
+    }
 
 
 }

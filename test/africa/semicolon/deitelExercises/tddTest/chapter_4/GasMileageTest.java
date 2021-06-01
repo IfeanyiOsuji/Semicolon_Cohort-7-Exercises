@@ -20,4 +20,14 @@ public class GasMileageTest {
 
         assertEquals(25.0, gasMileage.calculateGasPerGallon(500, 20));
     }
+    @Test
+    void showMilesPerGallonWhenMilesDrivenIs1000AndGallonUsedIs25(){
+        GasMileage gasMileage = new GasMileage();
+        assertEquals(40, gasMileage.calculateGasPerGallon(1000, 25));
+    }
+    @Test
+    void showMilesPerGallonWhenMilesDrivenIs2000AndGallonUsedIs30(){
+        GasMileage gasMileage = new GasMileage();
+        assertEquals(66.66666666666667, gasMileage.calculateGasPerGallon(2000, 30));
+    }
 }

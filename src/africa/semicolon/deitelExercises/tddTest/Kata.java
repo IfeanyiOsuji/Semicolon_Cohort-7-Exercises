@@ -135,11 +135,24 @@ public class Kata {
         System.out.println(reversed);
       return reversed;
     }
+    public int findFactorialOf(int number){
+        for(int i = number-1; i>0; i--)
+            number *=i;
+        return number;
+    }
+    public static int findAnotherfactorial(int number){
+        int factroal = number;
+        for(int i=1; i<factroal; i++)
+            number *= i;
+        return number;
+    }
 
 
     public static void main(String[] args) {
-        Kata kata = new Kata();
-        kata.reverseOrder(23451);
+       // Kata kata = new Kata();
+        //kata.reverseOrder(23451);
+      //  pallindrum();
+       findAnotherfactorial(6);
 
     }
 
