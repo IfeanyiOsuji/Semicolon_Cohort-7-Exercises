@@ -45,21 +45,18 @@ public class CreditLimitCalculator {
     }
 
     public int getNewbalance() {
-        newballance = Math.abs(initialBalance + numberOfItemsChargedPerMonth - allowableCredit);
+        newballance = initialBalance + numberOfItemsChargedPerMonth - allowableCredit;
         return newballance;
     }
 
-    public boolean isNewBalanceAboveCreditLimit(int numberOfitemsCharged) {
-        this.numberOfItemsChargedPerMonth += numberOfitemsCharged;
+    public boolean isNewBalanceAboveCreditLimit(int numberOfItemsCharged) {
+        numberOfItemsChargedPerMonth += numberOfItemsCharged;
         do{
-            newballance = Math.abs(initialBalance +numberOfItemsChargedPerMonth - allowableCredit);
+            getNewbalance();
             if(newballance > allowableCredit) return false;
-            else {
-                System.out.println(newballance);
-                return true;
-            }
-
+            numberOfItemsChargedPerMonth += numberOfItemsCharged;
         }while(getInitialBalance() <= allowableCredit);
-
+        System.out.println(newballance);
+       return true;
     }
 }

@@ -1,6 +1,11 @@
 package africa.semicolon.deitelExercises.tddTest.chapter_5;
 
 import java.util.Scanner;
+/*
+(Find the highest score) Write a program that prompts the user to enter the num-
+ber of students and each student’s name and score, and finally displays the name
+of the student with the highest score.
+ */
 
 public class StudentScores {
     public static void main(String[] args) {

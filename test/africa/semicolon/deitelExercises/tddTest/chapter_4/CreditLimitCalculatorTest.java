@@ -55,6 +55,7 @@ public class CreditLimitCalculatorTest {
     }
     @Test
     void secondTestIfUsersCreditLimitisExceeded(){
+        limitCalculator.setNumberOfItemsChargedPerMonth(150000);
         assertFalse(limitCalculator.isNewBalanceAboveCreditLimit(100));
     }
 }

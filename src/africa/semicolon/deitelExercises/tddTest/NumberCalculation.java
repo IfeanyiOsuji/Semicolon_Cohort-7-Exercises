@@ -6,12 +6,6 @@ public class NumberCalculation {
     private static int secondOperad;
 
     public static void calCulateNumbers(String number){
-
-
-        //System.out.println(parts[0]);
-        //String [] secondPart = parts[0].split("[^\\dA-Za-z]");
-        //System.out.println(parts[1]);
-
         separateNumbers(number);
         if(number.contains("+"))
             System.out.println(addNumbers(number));
@@ -38,8 +32,8 @@ public class NumberCalculation {
     }
 
     private static void separateNumbers(String number) {
-
-        String [] parts = number.replace(" ","").split("[^\\dA-Za-z]");
+        String specialCharacters = "[^\\dA-Za-z]";
+        String [] parts = number.replace(" ","").split(specialCharacters);
         firstOperand = Integer.parseInt(parts[0]);
         secondOperad = Integer.parseInt(parts[1]);
     }
