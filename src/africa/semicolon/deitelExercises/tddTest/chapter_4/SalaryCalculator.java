@@ -3,7 +3,7 @@ package africa.semicolon.deitelExercises.tddTest.chapter_4;
 public class SalaryCalculator {
     public static final int OFFICIAL_HOUR = 40;
     private String name;
-    private int hourlySalary;
+    private double salary;
     private int hoursWorked;
 
     public SalaryCalculator(String name) {
@@ -12,13 +12,13 @@ public class SalaryCalculator {
 
     public void setHourlysalary(int hourlysalary) {
         if(hourlysalary >0)
-        this.hourlySalary = hourlysalary;
+        this.salary = hourlysalary;
         else
             System.out.println("Invalid Amount");
     }
 
-    public int getHourlySalary() {
-        return hourlySalary;
+    public double getHourlySalary() {
+        return salary;
     }
 
     public void setNumberOfHoursWorked(int hours) {
@@ -32,30 +32,22 @@ public class SalaryCalculator {
         return hoursWorked;
     }
 
-    public double getGrossPay(String payType) {
-        if(payType.equalsIgnoreCase("official"))
-           return officialHourPay();
-        if (payType.equalsIgnoreCase("overtime"))
-            return officialAndExtraHoursGrossPay()+ officialHourPay();
-        else{
-            System.out.println("Pay time not indicated");return 0;}
-    }
 
-    private double officialAndExtraHoursGrossPay() {
-        int overTime = hoursWorked - OFFICIAL_HOUR;
-        return (overTime * hourlySalary)/1.5;
-    }
-
-    private double officialHourPay() {
-        int ordinaryHour = hoursWorked;
-        if(ordinaryHour> OFFICIAL_HOUR)
-            ordinaryHour = OFFICIAL_HOUR;
-        int hour = 1;
-        //double salary = hourlySalary;
-        while(hour <=ordinaryHour) {
-            hourlySalary+=hourlySalary;
-            hour++;
+    public double getGrossPay(int hours) {
+                double payment =0;
+                double overTimePayment = 0;
+        for(int i=1;i<=hours; i++ ){
+            if(i <=OFFICIAL_HOUR)
+                payment = salary * i;
+            else
+                overTimePayment = salary * (i-OFFICIAL_HOUR)/1.5;
         }
-        return hourlySalary;
+        System.out.println(payment);
+        System.out.println(overTimePayment);
+        if(hours <=OFFICIAL_HOUR) {
+            return payment;
+        }
+        else
+            return payment + overTimePayment;
     }
 }

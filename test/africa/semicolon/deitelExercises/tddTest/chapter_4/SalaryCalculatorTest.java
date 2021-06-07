@@ -32,27 +32,26 @@ public class SalaryCalculatorTest {
         SalaryCalculator salaryCalculator = new SalaryCalculator("James");
         salaryCalculator.setHourlysalary(300);
         salaryCalculator.setNumberOfHoursWorked(30);
-        assertEquals(9000, salaryCalculator.getGrossPay("normal"));
+        assertEquals(9000, salaryCalculator.getGrossPay(30));
     }
     @Test
     void showThatEmployeePayCannotBeAffectedByZeroOrNegativeValueOfPay(){
         SalaryCalculator salaryCalculator = new SalaryCalculator("James");
         salaryCalculator.setHourlysalary(-300);
-        salaryCalculator.setNumberOfHoursWorked(30);
-        assertEquals(0, salaryCalculator.getGrossPay("normal"));
+        assertEquals(0, salaryCalculator.getGrossPay(30));
     }
     @Test
     void showThatEmployeePayCannotBeAffectedByZeroOrNegativeValueOfHours(){
         SalaryCalculator salaryCalculator = new SalaryCalculator("James");
-        salaryCalculator.setHourlysalary(300);
-        salaryCalculator.setNumberOfHoursWorked(-30);
-        assertEquals(0, salaryCalculator.getGrossPay("normal"));
+       salaryCalculator.setHourlysalary(300);
+       // salaryCalculator.setNumberOfHoursWorked(-30);
+       assertEquals(0, salaryCalculator.getGrossPay(-30));
     }
     @Test
-    void showAfter40HoursEmployeeGetsTheSamePayFor1HourForOneAndHalfHour(){
+    void showThatAfter40HoursEmployeeGetsTheSamePayOf1HourForOneAndHalfHour(){
         SalaryCalculator salaryCalculator = new SalaryCalculator("James");
         salaryCalculator.setHourlysalary(300);
         salaryCalculator.setNumberOfHoursWorked(50);
-        assertEquals(14000, salaryCalculator.getGrossPay("overtime"));
+        assertEquals(14000, salaryCalculator.getGrossPay(50));
     }
 }

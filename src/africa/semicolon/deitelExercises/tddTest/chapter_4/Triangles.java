@@ -69,8 +69,10 @@ public class Triangles {
             System.out.println();
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
         Triangles triangles = new Triangles();
+        triangles.displaytrianglesOneAtATime();
     }
 
 }
