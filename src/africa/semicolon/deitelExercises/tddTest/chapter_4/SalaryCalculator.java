@@ -32,11 +32,13 @@ public class SalaryCalculator {
         return hoursWorked;
     }
 
-    public double getGrossPay() {
-        if(hoursWorked <= OFFICIAL_HOUR)
+    public double getGrossPay(String payType) {
+        if(payType.equalsIgnoreCase("official"))
            return officialHourPay();
-        else
-            return officialAndExtraHoursGrossPay()+officialHourPay();
+        if (payType.equalsIgnoreCase("overtime"))
+            return officialAndExtraHoursGrossPay()+ officialHourPay();
+        else{
+            System.out.println("Pay time not indicated");return 0;}
     }
 
     private double officialAndExtraHoursGrossPay() {
@@ -45,9 +47,13 @@ public class SalaryCalculator {
     }
 
     private double officialHourPay() {
+        int ordinaryHour = hoursWorked;
+        if(ordinaryHour> OFFICIAL_HOUR)
+            ordinaryHour = OFFICIAL_HOUR;
         int hour = 1;
-        while(hour <=OFFICIAL_HOUR) {
-            hourlySalary += hourlySalary;
+        //double salary = hourlySalary;
+        while(hour <=ordinaryHour) {
+            hourlySalary+=hourlySalary;
             hour++;
         }
         return hourlySalary;
