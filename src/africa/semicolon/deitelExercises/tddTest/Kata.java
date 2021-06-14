@@ -146,14 +146,55 @@ public class Kata {
             number *= i;
         return number;
     }
+public static String returnBinary(int decimal, int base){
+        String binary = "";
+        while(decimal >0 ){
+            int resultOfDivide = decimal % base;
+            binary=resultOfDivide+" "+binary;
+            decimal /=base;
+        }
+        return binary;
+}
+public static int convertHexadecimalToDecimal(String hexValue){
+        int decimalValue = 0;
+        String hexUpper = hexValue.toUpperCase();
+        for(int i=0; i<hexValue.length(); i++){
+            char hexChar = hexUpper.charAt(i);
+            decimalValue = decimalValue * 16 + hexCharToDecimal(hexChar);
+        }
+        return decimalValue;
+}
 
+    private static int hexCharToDecimal(char hexChar) {
+        if(hexChar >= 'A' && hexChar <= 'F')
+            return  10 + hexChar-'A';
+        else
+            return hexChar - '0';
+    }
 
     public static void main(String[] args) {
-       // Kata kata = new Kata();
-        //kata.reverseOrder(23451);
-      //  pallindrum();
-       findAnotherfactorial(6);
+        //System.out.println(convertHexadecimalToDecimal("AB8C"));
+        //System.out.println(convertHexadecimalToDecimal("af71"));
+        String [] name = new String[2];
+        name[0] = "Shade";
+        getname(name);
+        System.out.println(name[0]);
+        Kata kata = new Kata();
+        System.out.println(kata.setYourName());
+    }
+    public static String getname(String []name){
+        name [0] = "Kemi";
+        return name[0];
+    }
+    public String setYourName(){
+        String yourname = "Sidi";
+        getYourName(yourname);
+        return yourname;
+    }
 
+    public String getYourName(String yourname){
+        yourname = "John";
+        return yourname;
     }
 
     public int determinePriceByQuantity(int quantity) {
