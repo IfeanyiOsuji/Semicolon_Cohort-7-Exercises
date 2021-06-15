@@ -43,7 +43,8 @@ public class TableOfBinaryOctalAndHexadecimal {
     public static String getConvertedValues(int decimal){
         String values = """
          %d         %20s         %20s          %20s                
-                """.formatted(decimal,convertDecimalToBinaryOrOctal(decimal,2),convertDecimalToBinaryOrOctal(decimal,8),convertDecimalToHexadecimal(decimal,16));
+                """.formatted(decimal,convertDecimalToBinaryOrOctal(decimal,2),
+                convertDecimalToBinaryOrOctal(decimal,8),convertDecimalToHexadecimal(decimal,16));
     return values;
     }
 

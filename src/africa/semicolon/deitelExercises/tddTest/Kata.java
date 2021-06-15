@@ -175,26 +175,7 @@ public static int convertHexadecimalToDecimal(String hexValue){
     public static void main(String[] args) {
         //System.out.println(convertHexadecimalToDecimal("AB8C"));
         //System.out.println(convertHexadecimalToDecimal("af71"));
-        String [] name = new String[2];
-        name[0] = "Shade";
-        getname(name);
-        System.out.println(name[0]);
-        Kata kata = new Kata();
-        System.out.println(kata.setYourName());
-    }
-    public static String getname(String []name){
-        name [0] = "Kemi";
-        return name[0];
-    }
-    public String setYourName(){
-        String yourname = "Sidi";
-        getYourName(yourname);
-        return yourname;
-    }
 
-    public String getYourName(String yourname){
-        yourname = "John";
-        return yourname;
     }
 
     public int determinePriceByQuantity(int quantity) {

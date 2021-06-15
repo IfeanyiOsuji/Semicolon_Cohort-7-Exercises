@@ -75,6 +75,6 @@ Sample Output 0
         return factors;
     }
     public static void main(String[] args) {
-        System.out.println( printFactors(120));
+        System.out.println( printFactors(6));
     }
 }
