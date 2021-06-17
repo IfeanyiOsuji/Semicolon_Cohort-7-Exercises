@@ -1,5 +1,7 @@
 package africa.semicolon.deitelExercises.tddTest;
 
+import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Kata {
@@ -114,6 +116,33 @@ public class Kata {
         }
         while(userInput != 6);
     }
+
+    public static int findMaxElementInArray(int[] array) {
+        int max = array[0];
+        for(int element : array){
+            if(max <= element)
+                max = element;
+        }
+        return max;
+    }
+
+    public static int findMinElementInArray(int[] elements) {
+        int min = elements[0];
+        for(int element : elements){
+            if(min >= element)
+                min = element;
+        }
+        return min;
+    }
+
+    public static double findAverageOfElementsInArray(int[] elements) {
+        int sum = 0;
+        for(int element : elements)
+            sum+=element;
+        double average = sum*1.0/elements.length;
+        return average;
+    }
+
     public String reverseNumber(int digits){
         String getString = Integer.toString(digits);
         String reversed ="";
@@ -173,9 +202,27 @@ public static int convertHexadecimalToDecimal(String hexValue){
     }
 
     public static void main(String[] args) {
-        //System.out.println(convertHexadecimalToDecimal("AB8C"));
-        //System.out.println(convertHexadecimalToDecimal("af71"));
+        System.out.println((int)'<');
+        System.out.println((char)62);
 
+       int [] sideFrequency = frequencyOfDieSides();
+       int count = 0;
+        System.out.println("face            Frequency");
+        for(int i=0; i<6; i++){
+            System.out.printf("%d%25d%n", i+1, sideFrequency[i]);
+            count+=sideFrequency[i];
+        }
+        System.out.println(count);
+
+    }
+    public static int [] frequencyOfDieSides(){
+        SecureRandom random = new SecureRandom();
+        int [] dieSides = new int[6];
+        for (int i=0; i<6000000; i++){
+            dieSides[random.nextInt(6)]++;
+        }
+        System.out.println(Arrays.toString(dieSides));
+        return dieSides;
     }
 
     public int determinePriceByQuantity(int quantity) {

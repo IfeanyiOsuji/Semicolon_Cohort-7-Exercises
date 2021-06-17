@@ -10,7 +10,8 @@ public class RemovingDuplicatesInArray {
         for (int i = 0; i < number.length; i++) {
             if (uniqNumbers.contains(" "+Integer.toString(number[i])+" "))
                 continue;
-            if(uniqNumbers.contains(Integer.toString(number[0])+" ") && Integer.toString(number[i]).equals(Integer.toString(number[0])))
+            if(uniqNumbers.contains(Integer.toString(number[0])+" ") &&
+                    Integer.toString(number[i]).equals(Integer.toString(number[0])))
                 continue;
             else
                 uniqNumbers += (Integer.toString(number[i]))+" ";
@@ -19,23 +20,8 @@ public class RemovingDuplicatesInArray {
         System.out.println(uniqNumbers);
         System.out.println(count);
 
-        int[] uniqe = new int[count];
-        // Arrays.sort(numbers);
-        System.out.println(Arrays.toString(number));
-        for (int i = 0; i < number.length; i++) {
-            for (int j = 0; j < i; j++) {
-
-                if (number[i] == number[j])
-                    break;
-                    if (i == j)
-                        //uniqe[i] = numbers[i];
-                        System.out.print(number[i]+" ");
-
-                // isUnique = true;
-
-            }
-
-            }
+        String[] uniqe = uniqNumbers.split(" ");
         System.out.println(Arrays.toString(uniqe));
+
         }
     }

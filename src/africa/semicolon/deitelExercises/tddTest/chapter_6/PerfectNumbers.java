@@ -5,12 +5,11 @@ public class PerfectNumbers {
     public static String findFactors(int integer, int divisor) {
         String factors = "1,";
         //int divisor = 2;
-        while (integer >1){
+        while (divisor < integer){
             if(integer % divisor == 0){
                 factors += divisor+",";
-                integer = integer / divisor;
             }
-            else
+
                 divisor++;
         }
         factors = factors.substring(0, factors.length()-1);
@@ -22,12 +21,12 @@ public class PerfectNumbers {
         int numberStore = number;
         boolean isPerfect = false;
         int factor = 1;
-        while (number >1){
+        while (divisor < number){
             if(number % divisor == 0){
                 factor += divisor;
-                number = number / divisor;
+                //number = number / divisor;
             }
-            else divisor++;
+             divisor++;
         }
         if(numberStore == factor)
             isPerfect = true;
@@ -42,7 +41,7 @@ public class PerfectNumbers {
     }
     public static String generateTable(int number){
         String table = """
-        %d                      %20s%20b
+        %d                      %20s%70b
                 """.formatted(number, findFactors(number,2), isPerfect(number, 2));
         return table;
     }

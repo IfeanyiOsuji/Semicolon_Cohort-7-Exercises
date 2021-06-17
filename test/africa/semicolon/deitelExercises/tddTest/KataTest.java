@@ -75,6 +75,25 @@ public class KataTest {
         Kata kata = new Kata();
         assertEquals(720,kata.findFactorialOf(6) );
     }
+    @Test
+    void findMaximumElementInAnArrayTest(){
+        int [] elements = {34, 54, 65, 78, 100, 120, 90, 45, 12, 32};
+        int max = Kata.findMaxElementInArray(elements);
+        assertEquals(120, max);
+
+    }
+    @Test
+    void findMinimumElementInArray(){
+        int [] elements = {34, 54, 65, 78, 100, 120, 90, 45, 12, 32};
+        int min = Kata.findMinElementInArray(elements);
+        assertEquals(12, min);
+    }
+    @Test
+    void findAverageOfElementsInArray(){
+        int [] elements = {34, 54, 65, 78, 100, 120, 90, 45, 12, 32};
+        double avarage = Kata.findAverageOfElementsInArray(elements);
+        assertEquals(63.0, avarage);
+    }
 
 
 }
