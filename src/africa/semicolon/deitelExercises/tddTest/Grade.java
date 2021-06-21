@@ -100,19 +100,13 @@ public class Grade {
 
    }
     public static void main(String[] args) {
-       //Grade grade = new Grade();
-       //grade.printGrade();
-        //grade.printAnotherGrade((short)70);
-       // int i=0;
-        //while(i < 5){
-           // System.out.println("Hello World");
-        //i++;}
-
-        int number = 0;
-        while(number <=20){
-                System.out.println(number);
-            number+=2;
-        }
+      Scanner input = new Scanner(System.in);
+        System.out.println("Enter your age ");
+      int age = input.nextInt();
+      if(age <=10 && age >=30)
+          System.out.println("You are in this class");
+      else
+          System.out.println("You are in the next class");
     }
 
 }

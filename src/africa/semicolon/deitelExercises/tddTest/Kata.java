@@ -143,6 +143,25 @@ public class Kata {
         return average;
     }
 
+    public static int findSumOfRestElements(int[] arrs, int element) {
+        int sum = 0;
+        for(int i=0; i<arrs.length; i++) {
+            if (arrs[i] == element)
+                continue;
+            sum += arrs[i];
+        }
+        return sum;
+    }
+
+    public static int findMaximumOfSumAfterRemovingEachElement(int[] arr) {
+        int sum = findSumOfRestElements(arr, arr[0]);
+        for(int i=0; i<arr.length; i++){
+            if(sum < findSumOfRestElements(arr, arr[i]))
+                sum = findSumOfRestElements(arr, arr[i]);
+        }
+        return sum;
+    }
+
     public String reverseNumber(int digits){
         String getString = Integer.toString(digits);
         String reversed ="";
