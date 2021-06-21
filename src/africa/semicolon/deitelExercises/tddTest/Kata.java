@@ -143,21 +143,28 @@ public class Kata {
         return average;
     }
 
-    public static int findSumOfRestElements(int[] arrs, int element) {
+    public static int findSumOfElements(int[] arrs) {
         int sum = 0;
         for(int i=0; i<arrs.length; i++) {
-            if (arrs[i] == element)
-                continue;
             sum += arrs[i];
         }
         return sum;
     }
 
     public static int findMaximumOfSumAfterRemovingEachElement(int[] arr) {
-        int sum = findSumOfRestElements(arr, arr[0]);
+        int sum = findSumOfElements(arr) - arr[0];
         for(int i=0; i<arr.length; i++){
-            if(sum < findSumOfRestElements(arr, arr[i]))
-                sum = findSumOfRestElements(arr, arr[i]);
+            if(sum < findSumOfElements(arr) - arr[i])
+                sum = findSumOfElements(arr) - arr[i];
+        }
+        return sum;
+    }
+
+    public static int findMinimumOfSumAfterRemovingEachElement(int[] arr) {
+        int sum = findSumOfElements(arr);
+        for(int i=0; i<arr.length; i++){
+            if(sum >= findSumOfElements(arr) -arr[i])
+                sum = findSumOfElements(arr) - arr[i];
         }
         return sum;
     }
