@@ -227,6 +227,7 @@ public static int convertHexadecimalToDecimal(String hexValue){
             return hexChar - '0';
     }
 
+
     public static void main(String[] args) {
         System.out.println((int)'<');
         System.out.println((char)62);
