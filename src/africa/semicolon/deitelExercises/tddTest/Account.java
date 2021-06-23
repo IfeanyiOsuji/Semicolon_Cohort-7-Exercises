@@ -23,15 +23,26 @@ public class Account {
 
     public double withdraw(double amountToWithdraw, String pin) {
         if(checkIfPinIsValid(pin)) {
-            if (amountIsNegative(amountToWithdraw)) {
-            } else if (amountGreaterThanBalance(amountToWithdraw)) {
-            } else {
-                myAccountBallance = myAccountBallance - amountToWithdraw;
-            }
+            validateAndWithDraw(amountToWithdraw);
         }
         else
             System.out.println("Invalid PIN");
         return myAccountBallance;
+    }
+
+    public double withdraw(double amountToWithdraw) {
+        validateAndWithDraw(amountToWithdraw);
+        return myAccountBallance;
+    }
+
+    private void validateAndWithDraw(double amountToWithdraw) {
+        if (amountIsNegative(amountToWithdraw)) {
+            throw new IllegalArgumentException("Amount cannot be less than zero");
+        } else if (amountGreaterThanBalance(amountToWithdraw)) {
+            throw new IllegalArgumentException("Insufficient fund");
+        } else {
+            myAccountBallance = myAccountBallance - amountToWithdraw;
+        }
     }
 
     private boolean checkIfPinIsValid(String pin) {
@@ -63,4 +74,11 @@ public class Account {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void transfer(Account secondAccount, double amount) {
+        Account otherAccount = secondAccount;
+        double withdraw = withdraw(amount);
+        otherAccount.deposit(withdraw);
+    }
+
 }
