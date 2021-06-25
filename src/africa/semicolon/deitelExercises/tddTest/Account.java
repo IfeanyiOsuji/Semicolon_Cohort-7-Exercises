@@ -1,18 +1,32 @@
 package africa.semicolon.deitelExercises.tddTest;
 
+import africa.semicolon.deitelExercises.tddTest.bank_application.Admin;
+
 public class Account {
     public static final int MINIMUM_BALANCE = 0;
     private  String name;
     private double myAccountBallance;
     private String accountPIN = "1907";
+    private final int accountNumber;
+    private static int counter = 0;
 
     public Account(String name, double amountToDeposit) {
+        counter++;
         this.name = name;
         myAccountBallance = amountToDeposit;
+        accountNumber = counter;
     }
     public Account(){
+        counter++;
+        accountNumber = counter;
 
     }
+    public int getAccountNumber(){
+        return accountNumber;
+    }
+//    public void setAccountNumber(int accountNumber){
+//        this.accountNumber = accountNumber;
+//    }
     public double getMyAccountBallance(){
         return myAccountBallance;
     }
