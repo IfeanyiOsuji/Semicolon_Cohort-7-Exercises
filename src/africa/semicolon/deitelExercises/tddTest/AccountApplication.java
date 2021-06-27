@@ -34,14 +34,14 @@ public class AccountApplication {
                             System.out.println("Enter pin");
                             String pin = input.nextLine();
                             account.withdraw(amount, pin);
-                            System.out.println(account.getMyAccountBallance());
+                            System.out.println(account.getMyAccountBalance());
                             break;
                         }
                         case 2 -> {
                             System.out.println("Enter amount to deposit ");
                             int amount = input.nextInt();
                             account.deposit(amount);
-                            System.out.println(account.getMyAccountBallance());
+                            System.out.println(account.getMyAccountBalance());
                             break;
                         }
                         case 3 -> Account.displayAccount(account);

@@ -1,38 +1,33 @@
 package africa.semicolon.deitelExercises.tddTest;
 
-import africa.semicolon.deitelExercises.tddTest.bank_application.Admin;
-
 public class Account {
     public static final int MINIMUM_BALANCE = 0;
     private  String name;
-    private double myAccountBallance;
+    private double myAccountBalance;
     private String accountPIN = "1907";
     private final int accountNumber;
-    private static int counter = 0;
+    private static int accountNumberGenerator = 0;
 
     public Account(String name, double amountToDeposit) {
-        counter++;
+        accountNumberGenerator++;
         this.name = name;
-        myAccountBallance = amountToDeposit;
-        accountNumber = counter;
+        myAccountBalance = amountToDeposit;
+        accountNumber = accountNumberGenerator;
     }
     public Account(){
-        counter++;
-        accountNumber = counter;
+        accountNumberGenerator++;
+        accountNumber = accountNumberGenerator;
 
     }
     public int getAccountNumber(){
         return accountNumber;
     }
-//    public void setAccountNumber(int accountNumber){
-//        this.accountNumber = accountNumber;
-//    }
-    public double getMyAccountBallance(){
-        return myAccountBallance;
+    public double getMyAccountBalance(){
+        return myAccountBalance;
     }
     public void deposit(double amountToDeposit) {
         if(amountToDeposit >= MINIMUM_BALANCE)
-        myAccountBallance = myAccountBallance + amountToDeposit;
+        myAccountBalance = myAccountBalance + amountToDeposit;
     }
 
     public double withdraw(double amountToWithdraw, String pin) {
@@ -41,12 +36,12 @@ public class Account {
         }
         else
             System.out.println("Invalid PIN");
-        return myAccountBallance;
+        return myAccountBalance;
     }
 
     public double withdraw(double amountToWithdraw) {
         validateAndWithDraw(amountToWithdraw);
-        return myAccountBallance;
+        return myAccountBalance;
     }
 
     private void validateAndWithDraw(double amountToWithdraw) {
@@ -55,7 +50,7 @@ public class Account {
         } else if (amountGreaterThanBalance(amountToWithdraw)) {
             throw new IllegalArgumentException("Insufficient fund");
         } else {
-            myAccountBallance = myAccountBallance - amountToWithdraw;
+            myAccountBalance = myAccountBalance - amountToWithdraw;
         }
     }
 
@@ -64,7 +59,7 @@ public class Account {
     }
 
     private boolean amountGreaterThanBalance(double amountToWithdraw) {
-        return amountToWithdraw > myAccountBallance;
+        return amountToWithdraw > myAccountBalance;
     }
 
     private boolean amountIsNegative(double amount){
@@ -78,7 +73,7 @@ public class Account {
         this.accountPIN = accountPIN;
     }
     public static void displayAccount(Account accountToDisplay){
-        System.out.println(accountToDisplay.getName() +" : "+accountToDisplay.getMyAccountBallance());
+        System.out.println(accountToDisplay.getName() +" : "+accountToDisplay.getMyAccountBalance());
     }
 
     public String getName() {
