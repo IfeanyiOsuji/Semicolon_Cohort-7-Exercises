@@ -84,10 +84,8 @@ public class Account {
         this.name = name;
     }
 
-    public void transfer(Account secondAccount, double amount) {
-        Account otherAccount = secondAccount;
-        double withdraw = withdraw(amount);
-        otherAccount.deposit(withdraw);
+    public void transfer(double amount) {
+        this.withdraw(amount);
     }
 
 }
