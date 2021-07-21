@@ -33,4 +33,23 @@ public class Calculator {
         else
         return  (double) firstNumber/secondNumber;
     }
+    public static int findGreatestCommonDivisor(int number1, int number2) {
+        int divisor = 2;
+        int factor = 1;
+        while (number2 > number2/2) {
+            if (number1 % divisor == 0 && number2 % divisor == 0) {
+                factor *= divisor;
+                number1 /= divisor;
+                number2 /= divisor;
+
+            }
+            divisor++;
+
+        }
+        return factor;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(findGreatestCommonDivisor(1680, 640));
+    }
 }
