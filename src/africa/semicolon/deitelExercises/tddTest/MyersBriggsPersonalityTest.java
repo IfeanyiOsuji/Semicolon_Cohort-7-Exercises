@@ -54,9 +54,9 @@ public class MyersBriggsPersonalityTest {
 
         }
         System.out.println(Arrays.deepToString(getExtrovertIntrovert));
-        System.out.println("Extro = "+ extrovert +" Inttro = "+introvert);
+        System.out.println("Extro = "+ extrovert +" Intro = "+introvert);
         System.out.println(Arrays.deepToString(getSensingIntuition));
-        System.out.println("Sens = "+ sensing +" Int = "+introvert);
+        System.out.println("Sens = "+ sensing +" Int = "+iNtuitive);
         System.out.println(Arrays.deepToString(getThinkingFeeling));
         System.out.println("Think = "+ thinking +" Feel = "+ feeling);
         System.out.println(Arrays.deepToString(getJudgingPerceiving));
