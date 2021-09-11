@@ -10,7 +10,7 @@ public class SumOfTwoArguments {
 //        int [] sum = {1,3,4,2,5};
 //        int c = 3;
 
-        int [] sum = {3,4,4,2};
+        int [] sum = {1,4,3,2};
         int c = 6;
             System.out.println(Arrays.toString(sumTwoArguments(sum, c)));
 
@@ -24,4 +24,5 @@ public class SumOfTwoArguments {
         }
         return new int[]{};
     }
+
 }

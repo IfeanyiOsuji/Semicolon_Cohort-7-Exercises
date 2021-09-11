@@ -1,5 +1,5 @@
 package africa.semicolon.deitelExercises.tddTest.turtle_graphics;
 
-public enum Position {
+public enum PenPosition {
     UP, DOWN;
 }

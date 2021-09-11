@@ -1,7 +1,7 @@
 package africa.semicolon.deitelExercises.tddTest.chapter_15;
 
-import africa.semicolon.deitelExercises.tddTest.chapter_14.FileMatching;
-import africa.semicolon.deitelExercises.tddTest.chapter_14.TransactionRecord;
+import africa.semicolon.chapter_15.FileMatching;
+import africa.semicolon.chapter_15.TransactionRecord;
 import africa.semicolon.deitel_example_practice.SerializableAccount;
 import org.junit.jupiter.api.Test;
 

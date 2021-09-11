@@ -94,6 +94,20 @@ public class KataTest {
         double avarage = Kata.findAverageOfElementsInArray(elements);
         assertEquals(63.0, avarage);
     }
-
+    @Test
+    void findTheSumOfTheElementsOfTheArray(){
+        int [] arr = {5,6,9,10,4,2,6};
+        assertEquals(42, Kata.findSumOfElements(arr));
+    }
+    @Test
+    void findMaximumOfTheSumAfterEachElementIsRemoved(){
+        int [] arr = {5,6,9,10,4,2,6};
+        assertEquals(40, Kata.findMaximumOfSumAfterRemovingEachElement(arr));
+    }
+    @Test
+    void findMinimumOfTheSumAfterEachElementIsRemoved(){
+        int [] arr = {5,6,9,10,4,2,6};
+        assertEquals(32, Kata.findMinimumOfSumAfterRemovingEachElement(arr));
+    }
 
 }

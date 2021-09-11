@@ -1,2 +1,5 @@
-package africa.semicolon.estoreapp;public enum CardType {
+package africa.semicolon.estoreapp;
+
+public enum CardType {
+    MASTERCARD, VISACARD, VERVECARD, AMERICANEXPRESS;
 }
