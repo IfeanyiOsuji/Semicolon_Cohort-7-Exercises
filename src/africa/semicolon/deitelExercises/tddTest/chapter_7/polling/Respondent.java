@@ -1,7 +1,7 @@
 package africa.semicolon.deitelExercises.tddTest.chapter_7.polling;
 
 public class Respondent {
-    private int respondentNumber;
+    public static int respondentNumber;
 
     public Respondent() {
         this.respondentNumber +=1;

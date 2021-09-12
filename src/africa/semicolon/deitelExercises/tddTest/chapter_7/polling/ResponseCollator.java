@@ -34,8 +34,8 @@ public class ResponseCollator {
                 .min(Comparator.naturalOrder()).get();
     }
     public static void displayPollingResult(){
-        System.out.printf("|%-45s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-5s|%-5s|%n",
-                "Topics","1","2","3","4","5","6","7","8","9","10","Total","Average");
+        System.out.printf("%s%n|%-45s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-2s|%-5s|%-5s|%n%s%n",
+                "-".repeat(91),"Topics","1","2","3","4","5","6","7","8","9","10","Total","Average","-".repeat(91));
 
        Arrays.stream(pollingCenter.getTopics()).forEach(x->{
          System.out.printf("|%-45s|%-2d|%-2d|%-2d|%-2d|%-2d|%-2d|%-2d|%-2d|%-2d|%-2d|%5d|%7.2f|%n",
@@ -52,6 +52,7 @@ public class ResponseCollator {
                  getSumOfRatingsFor(x),
                  getAverageRatingsFor(x)
                  );
+           System.out.printf("%s%n","-".repeat(91));
        });
     }
     public static void displayMaximumPoll(){
